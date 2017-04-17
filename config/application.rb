@@ -18,8 +18,8 @@ Bundler.require(*Rails.groups)
 
 module Pavapath
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    Raven.configure do |config|
+      config.dsn = 'https://d647cb542a114255860945d74b6e7477:21d26ac57d784ad9a98cc2c285122b73@sentry.io/158974'
+    end
   end
 end
